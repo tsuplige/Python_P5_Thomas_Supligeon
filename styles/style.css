@@ -1,0 +1,46 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("roboto.eot"); /* IE9 Compat Modes */
+  src: url("roboto.eot?#iefix") format("embedded-opentype"), url("roboto.woff") format("woff"), url("roboto.ttf") format("truetype"), url("roboto.svg#svgFontName") format("svg"); /* Legacy iOS */
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 48px;
+  margin: auto;
+  background-image: linear-gradient(rgb(21, 20, 20), #272427);
+}
+
+header {
+  background-color: rgba(0, 0, 0, 0.77);
+  width: 100%;
+  height: 70px;
+  padding: 0 0px 0 0px;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+}
+header h1 {
+  color: #5855D1;
+  font-size: 80%;
+  margin-left: 1%;
+}
+header .header_menu {
+  color: white;
+  margin-right: 2%;
+  font-size: 60%;
+  font-weight: 100;
+  display: flex;
+  justify-content: space-between;
+  width: 18%;
+}
+header .header_menu a:hover {
+  color: rgb(220, 220, 220);
+}
+
+.best_movie {
+  background-color: #5755d1;
+  height: 85%;
+  width: 100%;
+  margin: auto;
+}/*# sourceMappingURL=style.css.map */

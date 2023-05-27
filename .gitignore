@@ -5,7 +5,7 @@ __pycache__/
 models/__pycache__
 views/__pycache__
 controllers/__pycache__
-OCMovie-API-EN-FR-master/
+OCMovies-API-EN-FR-master/
 
 # C extensions
 *.so
