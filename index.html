@@ -9,10 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="../styles/style.css" rel="stylesheet" />
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="../js/index.js" defer type="module"></script>
+    <script src="../js/main.js" defer type="module"></script>
   </head>
 
   <body>
@@ -27,16 +27,49 @@
       </nav>
 
     </header>
-    <section class="best_movie">
+    <section id="best_movie_section">
+      <article id="best_movie">
 
-      <aside class="best_movie_content">
+      <aside  id="best_movie_content">
         <!-- <h2 class="best_movie_content--title">Titre Film Populaire</h2>
         <button class="best_movie_content--button">Regarder</button>
         <p class="best_movie_content--resume">gfdzerf tgfdezertfgfd rfdf gfdsf gff df fdsfresdf fedespokn oekrnlknùqkln mqokirnleùmoj qmoklqnreqgùoiqn qùeroignùqoingrùmlj ùqiprefnqùopeirngfùoqjer gùqoierng ùpqeiorjgnùqjkl ergpùqioeng ùlkq ergùpiqne$ùrogkl $qùepirgnùqeoljr ùo eq$o jg$ùqoie $gekqi g$qeor g$iperq $pi qe$rpig </p> -->
       </aside>
 
-    </section>
-    <section class="Categories">
+      </article>
+      
 
     </section>
+    <section class="movie_per_categorie">
+      <div class="categories most_rated">
+        <h3 class="categories-title">Les mieux notés</h3>
+        <div class="categories-content">
+          <div id="film-slider">
+            <div class="film_card"></div>
+            <div class="film_card"></div>
+            <div class="film_card"></div>
+            <div class="film_card"></div>
+            <div class="film_card"></div>
+            <div class="film_card"></div>
+          </div>
+        </div>
+
+      </div>
+
+      </div>
+
+    </section>
+
+    <script>
+      $(document).ready(function() {
+        $('#film-slider').slick({
+          dots: true, // Affiche les indicateurs de navigation
+          infinite: true, // Permet de faire une boucle infinie du slider
+          slidesToShow: 4, // Nombre de diapositives visibles à la fois
+          slidesToScroll: 1 // Nombre de diapositives à faire défiler à la fois
+        });
+      });
+    </script>
+     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
   </body>

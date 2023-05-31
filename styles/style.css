@@ -13,7 +13,7 @@ body {
 header {
   background-color: rgba(0, 0, 0, 0.77);
   width: 100%;
-  height: 70px;
+  height: 65px;
   padding: 0 0px 0 0px;
   display: flex;
   position: fixed;
@@ -28,7 +28,7 @@ header h1 {
 header .header_menu {
   color: white;
   margin-right: 2%;
-  font-size: 60%;
+  font-size: 50%;
   font-weight: 100;
   display: flex;
   justify-content: space-between;
@@ -38,9 +38,57 @@ header .header_menu a:hover {
   color: rgb(220, 220, 220);
 }
 
-.best_movie {
-  background-color: #5755d1;
+#best_movie_section {
   height: 85%;
   width: 100%;
   margin: auto;
+  margin-bottom: -10rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#best_movie {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(43, 35, 43, 0.4784313725);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+#best_movie_content {
+  padding-left: 15px;
+}
+#best_movie_content .best_movie_content--title {
+  color: aliceblue;
+  font-size: 50px;
+}
+#best_movie_content .best_movie_content--resume {
+  font-size: 20px;
+  color: aliceblue;
+}
+#best_movie_content .best_movie_content--actors {
+  display: flex;
+  flex-direction: row;
+}
+#best_movie_content .best_movie_content--actor {
+  font-size: 11px;
+  color: aliceblue;
+}
+
+.categories .categories-title {
+  color: aliceblue;
+  font-size: 50%;
+  font-weight: lighter;
+  padding-left: 2%;
+}
+.categories .categories-content {
+  width: 100%;
+  height: 10rem;
+}
+.categories .categories-content .film_card {
+  height: 100%;
+  width: 300px;
+  margin-right: 5px;
+  background-color: #55a2d1;
 }/*# sourceMappingURL=style.css.map */
