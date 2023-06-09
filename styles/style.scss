@@ -118,17 +118,21 @@ display: none;
 }
 .cat_list-movie {
   width: 250px;
+  height: 145px;
   margin-right: 10px;
   transition: 0.5s;
   .movie_img {
     width: 100%;
+    height: 100%;
     margin-right: 10px;
+    object-fit:cover;
   }
 
 }
 
 .cat_list-movie:hover {
   width: 300px;
+  height: 190px;
 }
 
 .previus_slide, .next_slide {

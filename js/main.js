@@ -10,51 +10,98 @@ let source = "http://127.0.0.1:8000/api/v1/"
 //     return new_answer;
 // }
 
-async function getBestMovie(){
+async function getBestMovie() {
 
-    const best_movie_filtre = "?sort_by=-imdb_score"
+  const best_movie_filtre = "?sort_by=-imdb_score"
 
-    let answer = await getMovieByTitle(best_movie_filtre)
-    const id = answer["results"][0].id
-    console.log(id)
+  let answer = await getMovieByTitle(best_movie_filtre)
+  const id = answer["results"][0].id
+  console.log(id)
 
-    let nanswer = await getMovieByTitle(id)
-    
-    return nanswer;
+  let nanswer = await getMovieByTitle(id)
+
+  return nanswer;
 }
 
 
-async function getMovieByTitle(filtre){
-    const answer = await fetch(source + 'titles/' +filtre);
-    const data = await answer.json();
-    return data;
+async function getMovieByTitle(filtre) {
+  const answer = await fetch(source + 'titles/' + filtre);
+  const data = await answer.json();
+  return data;
 }
 
-let best_movie_data = await getBestMovie()
+async function AddBestsMovieData() {
+  const best_movie_filtre = "?sort_by=-imdb_score"
+  const best_movie_filtre_p2 = "?page=2&sort_by=-imdb_score"
+  let answer = await getMovieByTitle(best_movie_filtre)
+  let result = answer["results"]
 
-console.log(best_movie_data)
+  let id_list = []
+  result.forEach(movie => {
+    id_list.push(movie.id)
+  })
 
-let best_movie = document.getElementById("best_movie_section");
+  answer = await getMovieByTitle(best_movie_filtre_p2)
+  result = answer["results"]
 
-let iurl = best_movie_data['image_url']
-let best_content = document.getElementById("best_movie_content");
+  result.forEach(movie => {
+    id_list.push(movie.id)
+  })
 
-let html =  `<h2 class="best_movie_content--title">${best_movie_data.title}</h2>
-            <button>Regarder</button>
-            <p class="best_movie_content--resume">${best_movie_data.description}</p> <div class='best_movie_content--actors'>
+  let html = ""
+  for (const movie of id_list) {
+    let movie_data = await getMovieByTitle(movie);
+    let iurl = movie_data['image_url'];
+    console.log(iurl);
+    html += `<a href="" class="cat_list_element" role="link">
+      <div class="cat_list-movie" data-id="${movie}">
+        <img
+          class="movie_img"
+          src="${iurl}"
+          alt=""
+        />
+      </div>
+    </a>`;
+  }
 
-`
- best_movie_data.actors.forEach(actor => { html += 
-   ` <p class="best_movie_content--actor">${actor}, </p>`
-    
- });
+  document.getElementById("most_popular_movie").innerHTML = html
 
- html += "</div>"
+  console.log(await html)
+}
 
- document.getElementById("best_movie_content").innerHTML = html
-// console.log(iurl)
+AddBestsMovieData()
+async function AddBestMovieData() {
+  const best_movie_filtre = "?sort_by=-imdb_score"
 
-best_movie.style.backgroundImage = `url(${iurl})`;
+  let answer = await getMovieByTitle(best_movie_filtre)
+  const id = answer["results"][0].id
+  let best_movie_data = await getMovieByTitle(id)
+
+  let best_movie = document.getElementById("best_movie_section");
+
+  let iurl = best_movie_data['image_url']
+  let best_content = document.getElementById("best_movie_content");
+
+  let html = `<h2 class="best_movie_content--title">${best_movie_data.title}</h2>
+              <button>Regarder</button>
+              <p class="best_movie_content--resume">${best_movie_data.description}</p> <div class='best_movie_content--actors'>
+  
+  `
+  best_movie_data.actors.forEach(actor => {
+    html +=
+    ` <p class="best_movie_content--actor">${actor}, </p>`
+
+  });
+
+  html += "</div>"
+
+  document.getElementById("best_movie_content").innerHTML = html
+  // console.log(iurl)
+
+  best_movie.style.backgroundImage = `url(${iurl})`;
+}
+
+AddBestMovieData()
 
 // const scrollToStartButton = document.getElementById('scrollToStartButton');
 // scrollToStartButton.addEventListener('click', function() {
@@ -92,14 +139,14 @@ function scrollToPosition(element, to, duration) {
 
 // Bouton pour aller au début du contenu scrollable
 const scrollToStartButton = document.getElementById('scrollToStartButton');
-scrollToStartButton.addEventListener('click', function() {
+scrollToStartButton.addEventListener('click', function () {
   const element = document.querySelector('.cat_list');
   scrollToPosition(element, 0, 500); // Défilement vers le début en 500ms
 });
 
 // Bouton pour aller à la fin du contenu scrollable
 const scrollToEndButton = document.getElementById('scrollToEndButton');
-scrollToEndButton.addEventListener('click', function() {
+scrollToEndButton.addEventListener('click', function () {
   const element = document.querySelector('.cat_list');
   const scrollWidth = element.scrollWidth - element.clientWidth;
   scrollToPosition(element, scrollWidth, 500); // Défilement vers la fin en 500ms
