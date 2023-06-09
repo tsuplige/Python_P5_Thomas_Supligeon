@@ -87,31 +87,58 @@
     color: aliceblue;
   }
   }
-  
-.categories {
+
+
 .categories-title {
   color: aliceblue;
   font-size: 50%;
   font-weight: lighter;
-  padding-left: 2%;
+  margin-left: 150px;
 }
-.categories-content {
-    // display: flex;
-    // flex-direction: row;
-    // align-items: center;
+.cat_list {
+  width: 80%;
+  overflow-x: auto ;
+  -ms-overflow-style: none;
+  scrollbar-width: none;  
+  // margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 250px;
+  // background-color: blue;
+}
+
+.cat_list::-webkit-scrollbar {
+display: none;
+}
+
+.cat_list_element{
+  width: 100%;
+}
+.cat_list-movie {
+  width: 250px;
+  margin-right: 10px;
+  transition: 0.5s;
+  .movie_img {
     width: 100%;
-    height: 10rem;
-    // background-color: aliceblue;
-    // overflow: hidden;
-    .film_card{
-      height: 100%;
-      width: 300px;
-      margin-right: 5px;
-      background-color: #55a2d1;
-    }
+    margin-right: 10px;
   }
 
 }
-  
 
-  
+.cat_list-movie:hover {
+  width: 300px;
+}
+
+.previus_slide, .next_slide {
+  width: 30px;
+  height: 150px;
+}
+
+.most_popular_slider {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
+}

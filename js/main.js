@@ -55,3 +55,53 @@ let html =  `<h2 class="best_movie_content--title">${best_movie_data.title}</h2>
 // console.log(iurl)
 
 best_movie.style.backgroundImage = `url(${iurl})`;
+
+// const scrollToStartButton = document.getElementById('scrollToStartButton');
+// scrollToStartButton.addEventListener('click', function() {
+//   const element = document.querySelector('.cat_list');
+//   element.scrollLeft = 0;
+// });
+
+// const scrollToEndButton = document.getElementById('scrollToEndButton');
+// scrollToEndButton.addEventListener('click', function() {
+//   const element = document.querySelector('.cat_list');
+//   element.scrollLeft = element.scrollWidth;
+// });
+
+// Fonction pour faire défiler le contenu vers une position spécifique avec une animation fluide
+function scrollToPosition(element, to, duration) {
+  const start = element.scrollLeft;
+  const change = to - start;
+  const startTime = performance.now();
+
+  function animateScroll(timestamp) {
+    const currentTime = timestamp - startTime;
+    const increment = currentTime / duration;
+    const easeInOut = 0.5 * (1 - Math.cos(Math.PI * increment));
+
+    const newPosition = start + change * easeInOut;
+    element.scrollLeft = newPosition;
+
+    if (currentTime < duration) {
+      requestAnimationFrame(animateScroll);
+    }
+  }
+
+  requestAnimationFrame(animateScroll);
+}
+
+// Bouton pour aller au début du contenu scrollable
+const scrollToStartButton = document.getElementById('scrollToStartButton');
+scrollToStartButton.addEventListener('click', function() {
+  const element = document.querySelector('.cat_list');
+  scrollToPosition(element, 0, 500); // Défilement vers le début en 500ms
+});
+
+// Bouton pour aller à la fin du contenu scrollable
+const scrollToEndButton = document.getElementById('scrollToEndButton');
+scrollToEndButton.addEventListener('click', function() {
+  const element = document.querySelector('.cat_list');
+  const scrollWidth = element.scrollWidth - element.clientWidth;
+  scrollToPosition(element, scrollWidth, 500); // Défilement vers la fin en 500ms
+});
+

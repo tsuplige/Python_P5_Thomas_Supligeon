@@ -76,19 +76,55 @@ header .header_menu a:hover {
   color: aliceblue;
 }
 
-.categories .categories-title {
+.categories-title {
   color: aliceblue;
   font-size: 50%;
   font-weight: lighter;
-  padding-left: 2%;
+  margin-left: 150px;
 }
-.categories .categories-content {
+
+.cat_list {
+  width: 80%;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 250px;
+}
+
+.cat_list::-webkit-scrollbar {
+  display: none;
+}
+
+.cat_list_element {
   width: 100%;
-  height: 10rem;
 }
-.categories .categories-content .film_card {
-  height: 100%;
+
+.cat_list-movie {
+  width: 250px;
+  margin-right: 10px;
+  transition: 0.5s;
+}
+.cat_list-movie .movie_img {
+  width: 100%;
+  margin-right: 10px;
+}
+
+.cat_list-movie:hover {
   width: 300px;
-  margin-right: 5px;
-  background-color: #55a2d1;
+}
+
+.previus_slide, .next_slide {
+  width: 30px;
+  height: 150px;
+}
+
+.most_popular_slider {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  justify-content: center;
 }/*# sourceMappingURL=style.css.map */
