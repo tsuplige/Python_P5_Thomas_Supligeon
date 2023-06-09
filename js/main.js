@@ -30,10 +30,8 @@ async function getMovieByTitle(filtre) {
   return data;
 }
 
-async function AddBestsMovieData() {
-  const best_movie_filtre = "?sort_by=-imdb_score"
-  const best_movie_filtre_p2 = "?page=2&sort_by=-imdb_score"
-  let answer = await getMovieByTitle(best_movie_filtre)
+async function AddSliderMovieData(movie_filtre, cat_id) {
+  let answer = await getMovieByTitle('?' + movie_filtre)
   let result = answer["results"]
 
   let id_list = []
@@ -41,7 +39,7 @@ async function AddBestsMovieData() {
     id_list.push(movie.id)
   })
 
-  answer = await getMovieByTitle(best_movie_filtre_p2)
+  answer = await getMovieByTitle("?page=2&" + movie_filtre)
   result = answer["results"]
 
   result.forEach(movie => {
@@ -64,12 +62,16 @@ async function AddBestsMovieData() {
     </a>`;
   }
 
-  document.getElementById("most_popular_movie").innerHTML = html
+  document.getElementById(cat_id).innerHTML = html
 
   console.log(await html)
 }
 
-AddBestsMovieData()
+AddSliderMovieData('sort_by=-imdb_score', "most_popular_movie")
+
+AddSliderMovieData('genre=animation', 'animation')
+AddSliderMovieData('genre=action', 'action')
+AddSliderMovieData('genre=comedy', 'comedy')
 async function AddBestMovieData() {
   const best_movie_filtre = "?sort_by=-imdb_score"
 
