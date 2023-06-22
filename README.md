@@ -26,7 +26,7 @@ JustStreamIt est une application web qui permet de visualiser en temps réel un 
 1. Clonez le dépôt GitHub du site vers votre machine locale :
    ```
    git clone https://github.com/tsuplige/Python_P6_Thomas_Supligeon.git
-
+   ```
 3. Accédez au répertoire du projet :
    ```
    cd Python_P6_Thomas_Supligeont
