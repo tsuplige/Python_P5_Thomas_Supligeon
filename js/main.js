@@ -55,10 +55,8 @@ async function AddBestMovieData() {
   let best_movie_data = await getMovieByTitle(id)
 
   let best_movie = document.getElementById("best_movie_section");
-  let best_movie_modal = document.getElementById("best-movie_modale-header");
 
   let iurl = best_movie_data['image_url']
-  let best_content = document.getElementById("best_movie_content");
 
   let html = `<div id="best-movie_modal" class="modal">
 
@@ -203,6 +201,7 @@ async function modalActivate(){
     }
   }
 }
+
 AddBestMovieData()
 AddSliderMovieData('sort_by=-imdb_score', "best-movie")
 AddSliderMovieData('genre=animation', 'animation-movie')

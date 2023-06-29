@@ -44,7 +44,7 @@ header .header_menu a:hover {
 }
 
 #best_movie_section {
-  height: 85%;
+  height: 14em;
   width: 100%;
   margin: auto;
   margin-bottom: -10rem;
@@ -65,7 +65,7 @@ header .header_menu a:hover {
   background-color: #5855D1;
   color: white;
   width: 20%;
-  height: 7%;
+  height: 40px;
   font-size: 20px;
   text-align: center;
   text-decoration: none;
@@ -107,6 +107,7 @@ header .header_menu a:hover {
 
 .cat_list {
   width: 80%;
+  overflow-y: clip;
   overflow-x: auto;
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -127,10 +128,11 @@ header .header_menu a:hover {
 }
 
 .cat_list-movie {
-  width: 250px;
-  height: 180px;
+  width: 190px;
+  height: 220px;
   margin-right: 10px;
   transition: 0.5s;
+  background-color: #5855D1;
 }
 .cat_list-movie .movie_img {
   width: 100%;
@@ -145,13 +147,13 @@ header .header_menu a:hover {
 }
 
 .cat_list-movie:hover {
-  width: 300px;
-  height: 190px;
+  width: 210px;
+  height: 280px;
 }
 
 .previus_slide, .next_slide {
   width: 30px;
-  height: 180px;
+  height: 220px;
   font-weight: 900;
   font-size: 23px;
   color: rgba(255, 255, 255, 0.631372549);
@@ -164,7 +166,6 @@ header .header_menu a:hover {
 
 .previus_slide:hover, .next_slide:hover {
   width: 50px;
-  position: aliceblue;
   color: white;
 }
 

@@ -55,7 +55,7 @@
   }
 
   #best_movie_section {
-    height: 85%;
+    height: 14em;
     width: 100%;
     margin: auto;
     margin-bottom: -10rem;
@@ -75,7 +75,7 @@
     background-color : #5855D1;
     color : white;
     width: 20%;
-    height: 7%;
+    height: 40px;
     font-size: 20px;
     text-align: center;
     text-decoration: none;
@@ -119,6 +119,7 @@
 }
 .cat_list {
   width: 80%;
+  overflow-y: clip;
   overflow-x: auto ;
   -ms-overflow-style: none;
   scrollbar-width: none;  
@@ -140,10 +141,11 @@ display: none;
   cursor: pointer;
 }
 .cat_list-movie {
-  width: 250px;
-  height: 180px;
+  width: 190px;
+  height: 220px;
   margin-right: 10px;
   transition: 0.5s;
+  background-color: #5855D1;
   .movie_img {
     width: 100%;
     height: 100%;
@@ -158,13 +160,13 @@ display: none;
 }
 
 .cat_list-movie:hover {
-  width: 300px;
-  height: 190px;
+  width: 210px;
+  height: 280px;
 }
 
 .previus_slide, .next_slide {
   width: 30px;
-  height: 180px;
+  height: 220px;
   font-weight: 900;
   font-size: 23px;
   color: #ffffffa1;
@@ -176,7 +178,6 @@ display: none;
 }
 .previus_slide:hover, .next_slide:hover {
   width: 50px;
-  position: aliceblue;
   color: white;
 }
 
